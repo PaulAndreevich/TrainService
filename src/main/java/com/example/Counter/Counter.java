@@ -20,7 +20,7 @@ public class Counter {
                 now = now.getLinkNext();
                 tempSize++;
             }
-            
+
             now.setLight(false);
             resultSize = tempSize;
 

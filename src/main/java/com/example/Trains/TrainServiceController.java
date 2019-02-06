@@ -3,6 +3,7 @@ package com.example.Trains;
 
 import com.example.Counter.Counter;
 import com.example.Railway.Train;
+import com.example.Response.AnswerResponse;
 import com.example.Response.MyResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,31 +28,41 @@ public class TrainServiceController {
     @PostMapping(path = "/train/{size}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> all(@PathVariable String size){
         Integer sizeValue;
-        Version resultVer;
-
+        Version version;
         try{
             sizeValue = Integer.parseInt(size);
             Train train = new Train(sizeValue);
-            Version version = new Version(train);
-            resultVer = repository.save(version);
-            //repository.flush();
+            version = new Version(train);
+            version = repository.save(version);
         } catch (Exception e){
             return new ResponseEntity<>(
                     new MyResponse(false, null, "Incorrect input"),
                     HttpStatus.BAD_REQUEST);
         }
+
         return new ResponseEntity<>(
-                new MyResponse(true, resultVer.getId().longValue(), "Correct input"),
+                new MyResponse(true, version.getId().longValue(), "Correct input"),
                 HttpStatus.OK);
     }
 
-    @GetMapping(path = "/answer", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> newSeat() {
-        Version version = repository.findById(1l).get();
-       return new ResponseEntity<>(
-                new MyResponse(true, null, String.valueOf(Counter.findSizeOfTrain(version.getTrain().getRoot()))),
-                HttpStatus.OK);
+    @GetMapping(path = "/answer/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> newSeat(@PathVariable String id) {
+        Version version;
+        Integer answer;
 
+        try {
+            Long idValue = Long.parseLong(id);
+            version = repository.findById(idValue).get();
+            answer = Counter.findSizeOfTrain(version.getTrain().getRoot());
+        }catch (Exception e){
+            return new ResponseEntity<>(
+                    new AnswerResponse(false,null,"Incorrect input"),
+                    HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity<>(
+                new AnswerResponse(true, answer,"Correct input"),
+                HttpStatus.BAD_REQUEST);
     }
 
 }
