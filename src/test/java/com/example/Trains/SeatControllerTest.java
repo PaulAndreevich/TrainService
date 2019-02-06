@@ -26,14 +26,14 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 public class SeatControllerTest {
 
         @InjectMocks
-        private TrainServiceController seatController;
+        private TrainServiceController trainServiceController;
 
         private MockMvc mockMvc;
         ObjectMapper om = new ObjectMapper();
 
         @Before
         public void setup() throws Exception{
-            /*mockMvc = MockMvcBuilders.standaloneSetup(seatController).build();*/
+           /* mockMvc = MockMvcBuilders.standaloneSetup(trainServiceController).build();
         }
 
         @Test

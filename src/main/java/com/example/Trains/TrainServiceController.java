@@ -19,21 +19,19 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 public class TrainServiceController {
 
     @Autowired
-    private final VersionRepository repository;
+    private Logic logic;
 
     TrainServiceController(VersionRepository repository){
-        this.repository = repository;
+        this.logic = new Logic(repository);
     }
 
     @PostMapping(path = "/train/{size}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> all(@PathVariable String size){
+    public ResponseEntity<?> setTrainSize(@PathVariable String size){
         Integer sizeValue;
-        Version version;
+        Long resultID;
         try{
             sizeValue = Integer.parseInt(size);
-            Train train = new Train(sizeValue);
-            version = new Version(train);
-            version = repository.save(version);
+            resultID = logic.createTrain(sizeValue);
         } catch (Exception e){
             return new ResponseEntity<>(
                     new MyResponse(false, null, "Incorrect input"),
@@ -41,19 +39,17 @@ public class TrainServiceController {
         }
 
         return new ResponseEntity<>(
-                new MyResponse(true, version.getId().longValue(), "Correct input"),
+                new MyResponse(true,resultID, "Correct input"),
                 HttpStatus.OK);
     }
 
     @GetMapping(path = "/answer/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> newSeat(@PathVariable String id) {
-        Version version;
+    public ResponseEntity<?> getTrainLength(@PathVariable String id) {
         Integer answer;
 
         try {
             Long idValue = Long.parseLong(id);
-            version = repository.findById(idValue).get();
-            answer = Counter.findSizeOfTrain(version.getTrain().getRoot());
+            answer = logic.findTrainLength(idValue);
         }catch (Exception e){
             return new ResponseEntity<>(
                     new AnswerResponse(false,null,"Incorrect input"),
