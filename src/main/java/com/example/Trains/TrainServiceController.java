@@ -30,6 +30,7 @@ public class TrainServiceController {
         Long resultID;
         try{
             sizeValue = Integer.parseInt(size);
+            if (sizeValue <= 0) throw new Exception();
             resultID = logic.createTrain(sizeValue);
         } catch (Exception e){
             return new ResponseEntity<>(
