@@ -15,7 +15,6 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 
 
 @RestController
-
 public class TrainServiceController {
 
     @Autowired
@@ -45,8 +44,7 @@ public class TrainServiceController {
 
     @GetMapping(path = "/answer/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getTrainLength(@PathVariable String id) {
-        Integer answer;
-
+        Integer answer = null;
         try {
             Long idValue = Long.parseLong(id);
             answer = logic.findTrainLength(idValue);
@@ -58,7 +56,7 @@ public class TrainServiceController {
 
         return new ResponseEntity<>(
                 new AnswerResponse(true, answer,"Correct input"),
-                HttpStatus.BAD_REQUEST);
+                HttpStatus.OK);
     }
 
 }
