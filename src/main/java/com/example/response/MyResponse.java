@@ -1,14 +1,14 @@
-package com.example.Response;
+package com.example.response;
 
-public class AnswerResponse {
+public class MyResponse {
     private Boolean success;
     private String message;
-    private Integer answer;
+    private Long id;
 
-    public AnswerResponse(Boolean success, Integer result, String message) {
+    public MyResponse(Boolean success, Long id, String message) {
         this.success = success;
-        this.answer = result;
         this.message = message;
+        this.id = id;
     }
 
     public Boolean getSuccess() {
@@ -19,12 +19,12 @@ public class AnswerResponse {
         this.success = success;
     }
 
-    public Integer getAnswer() {
-        return answer;
+    public Long getId() {
+        return id;
     }
 
-    public void setAnswer(Integer answer) {
-        this.answer = answer;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getMessage() {

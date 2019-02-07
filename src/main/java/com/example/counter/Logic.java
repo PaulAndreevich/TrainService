@@ -1,7 +1,9 @@
-package com.example.Trains;
+package com.example.counter;
 
-import com.example.Counter.Counter;
-import com.example.Railway.Train;
+import com.example.counter.Counter;
+import com.example.data.VersionRepository;
+import com.example.railway.Train;
+import com.example.railway.Version;
 import org.springframework.stereotype.Service;
 
 
@@ -10,7 +12,7 @@ public class Logic {
 
     private final VersionRepository repository;
 
-    Logic(VersionRepository repository) {
+    public Logic(VersionRepository repository) {
         this.repository = repository;
     }
 
@@ -26,7 +28,4 @@ public class Logic {
         Version version = repository.findById(id).get();
         return Counter.findSizeOfTrain(version.getTrain().getRoot());
     }
-
-
-
 }

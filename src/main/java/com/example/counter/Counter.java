@@ -1,6 +1,6 @@
-package com.example.Counter;
+package com.example.counter;
 
-import com.example.Railway.Carrige;
+import com.example.railway.Carrige;
 
 public class Counter {
     public static int findSizeOfTrain(Carrige start){

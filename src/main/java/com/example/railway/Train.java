@@ -1,4 +1,4 @@
-package com.example.Railway;
+package com.example.railway;
 
 import java.io.Serializable;
 import java.util.Random;
@@ -10,7 +10,6 @@ public class Train implements Serializable {
     public Train(int numberOfCarriges) {
         if (numberOfCarriges <= 0) {
             root = null;
-            //sizeUnique = 0;
         } else {
             Random rand = new Random();
             for (int i = 0; i < numberOfCarriges; i++) {

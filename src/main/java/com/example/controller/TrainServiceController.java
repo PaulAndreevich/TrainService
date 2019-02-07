@@ -1,10 +1,10 @@
-package com.example.Trains;
+package com.example.controller;
 
 
-import com.example.Counter.Counter;
-import com.example.Railway.Train;
-import com.example.Response.AnswerResponse;
-import com.example.Response.MyResponse;
+import com.example.response.AnswerResponse;
+import com.example.response.MyResponse;
+import com.example.counter.Logic;
+import com.example.data.VersionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

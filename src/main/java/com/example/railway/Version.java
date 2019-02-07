@@ -1,11 +1,8 @@
-package com.example.Trains;
+package com.example.railway;
 
-import com.example.Railway.Train;
-import lombok.Builder;
+import com.example.railway.Train;
 import lombok.Data;
-import lombok.Generated;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,11 +13,11 @@ public class Version {
     private @GeneratedValue @Id Long id;
     private Train train;
 
-    Version(Train train){
+    public Version(Train train){
         this.train = train;
     }
 
-    Version(){
+    public Version(){
         train = null;
     };
 

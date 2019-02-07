@@ -1,4 +1,4 @@
-package com.example.Trains;
+package com.example.exceptions;
 
 public class VersionNotFoundException extends RuntimeException {
 
