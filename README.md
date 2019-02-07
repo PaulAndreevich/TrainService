@@ -3,10 +3,10 @@
 Сервис для решения задачи о циклическом поезде. Для запуска задания требуется postgreSQL.
 Для создания БД для программы введите следующие команды при помощь psql (консоль/терминал):
 
-CREATE database server;<br />
-CREATE role program WITH password 'test'; <br />
-GRANT ON PRIVILEGES ON database server TO program; <br />
-ALTER role program WITH login;<br />
+**CREATE database server;**<br />
+**CREATE role program WITH password 'test';** <br />
+**GRANT ON PRIVILEGES ON database server TO program;** <br />
+**ALTER role program WITH login;**<br />
 
 В сервисе реализовано 2 метода: 
 
