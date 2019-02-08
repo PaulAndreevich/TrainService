@@ -88,3 +88,27 @@ Feb 08, 2019 5:48:58 PM com.example.controller.TrainServiceController getTrainLe
 INFO: /answer/18 Trying to find the length of the train with ID:18
 Feb 08, 2019 5:48:58 PM com.example.controller.TrainServiceController getTrainLength
 INFO: Size of train with version ID:18 was successfully calculated!
+Feb 08, 2019 5:52:18 PM com.example.controller.TrainServiceController setTrainSize
+INFO: Trying to create train of size:25
+Feb 08, 2019 5:52:18 PM com.example.controller.TrainServiceController setTrainSize
+INFO: Train with size 25 was successfully created!
+Feb 08, 2019 5:54:12 PM com.example.controller.TrainServiceController setTrainSize
+INFO: Trying to create train of size:word
+Feb 08, 2019 5:54:12 PM com.example.controller.TrainServiceController setTrainSize
+WARNING: Incorrect input of train size:word
+Feb 08, 2019 5:56:20 PM com.example.controller.TrainServiceController getTrainLength
+INFO: /answer/18 Trying to find the length of the train with ID:18
+Feb 08, 2019 5:56:20 PM com.example.controller.TrainServiceController getTrainLength
+INFO: Size of train with version ID:18 was successfully calculated!
+Feb 08, 2019 5:56:26 PM com.example.controller.TrainServiceController getTrainLength
+INFO: /answer/19 Trying to find the length of the train with ID:19
+Feb 08, 2019 5:56:26 PM com.example.controller.TrainServiceController getTrainLength
+INFO: Size of train with version ID:19 was successfully calculated!
+Feb 08, 2019 5:57:50 PM com.example.controller.TrainServiceController getTrainLength
+INFO: /answer/100 Trying to find the length of the train with ID:100
+Feb 08, 2019 5:57:50 PM com.example.controller.TrainServiceController getTrainLength
+WARNING: Incorrect input of ID: 100(Version of has not been found or the ID is not an Integer)
+Feb 08, 2019 6:03:35 PM com.example.controller.TrainServiceController getTrainLength
+INFO: /answer/word Trying to find the length of the train with ID:word
+Feb 08, 2019 6:03:35 PM com.example.controller.TrainServiceController getTrainLength
+WARNING: Incorrect input of ID: word(Version of has not been found or the ID is not an Integer)
