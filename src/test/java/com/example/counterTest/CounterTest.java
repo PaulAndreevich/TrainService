@@ -1,7 +1,7 @@
 package com.example.counterTest;
 
 import com.example.counter.Counter;
-import com.example.railway.Train;
+import com.example.blocks.Train;
 
 public class CounterTest {
     public static void main(String[] args) {

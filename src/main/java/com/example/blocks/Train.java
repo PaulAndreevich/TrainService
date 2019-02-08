@@ -1,4 +1,4 @@
-package com.example.railway;
+package com.example.blocks;
 
 import java.io.Serializable;
 import java.util.Random;

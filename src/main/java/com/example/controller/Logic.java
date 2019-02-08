@@ -1,11 +1,12 @@
-package com.example.counter;
+package com.example.controller;
 
+
+import com.example.blocks.Version;
 import com.example.counter.Counter;
 import com.example.data.VersionRepository;
-import com.example.railway.Train;
-import com.example.railway.Version;
-import org.springframework.stereotype.Service;
+import com.example.blocks.Train;
 
+import org.springframework.stereotype.Service;
 
 @Service
 public class Logic {
@@ -27,5 +28,9 @@ public class Logic {
     public Integer findTrainLength(Long id){
         Version version = repository.findById(id).get();
         return Counter.findSizeOfTrain(version.getTrain().getRoot());
+    }
+
+    public VersionRepository getRepository() {
+        return repository;
     }
 }

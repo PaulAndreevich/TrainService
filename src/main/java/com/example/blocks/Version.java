@@ -1,8 +1,6 @@
-package com.example.railway;
+package com.example.blocks;
 
-import com.example.railway.Train;
 import lombok.Data;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -37,8 +35,5 @@ public class Version {
         this.train = train;
     }
 }
-
-
-
 
 
