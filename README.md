@@ -5,7 +5,7 @@
 
 **CREATE database server;**<br />
 **CREATE role program WITH password 'test';** <br />
-**GRANT ON PRIVILEGES ON database server TO program;** <br />
+**GRANT ALL PRIVILEGES ON database server TO program;** <br />
 **ALTER role program WITH login;**<br />
 
 В сервисе реализовано 2 метода: 
